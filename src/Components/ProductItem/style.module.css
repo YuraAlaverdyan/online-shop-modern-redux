@@ -1,0 +1,93 @@
+.mainDiv {
+    display: flex;
+    flex-direction: row;
+}
+
+.card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    background: #191919;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    background: #ffce00;
+    transform: skewY(345deg);
+    transition: 0.5s;
+}
+
+.card:hover::before {
+    top: -70%;
+    transform: skewY(390deg);
+}
+
+.card .imgBox {
+    position: relative;
+
+    padding-top: 40px;
+    /* padding-bottom: 3px; */
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.card .contentBox {
+    padding: 0 5px 0 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 5px;
+    z-index: 2;
+}
+
+.card .contentBox p {
+    font-size: 12px;
+    position: relative;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 !important;
+}
+
+.card .contentBox .price {
+    font-size: 24px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.card .contentBox .buy {
+    position: relative;
+    opacity: 0;
+    padding: 10px 30px;
+    margin-top: 15px;
+    color: #000000;
+    text-decoration: none;
+    background: #ffce00;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.card:hover .contentBox .buy {
+    opacity: 1;
+}
+
+.mouse {
+    width: 100px;
+    object-fit: contain;
+}
+
+.buy {
+    top: 10px;
+    cursor: pointer;
+}
